@@ -16,7 +16,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    environment: TEST
+    env:
+      TEST_WEBHOOK: https://chat.googleapis.com/v1/spaces/AAAAt6giOtw/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=k8-_WYPYhkPN2IYMG59iVoTRlyvjlRUKIADp1T0jfzQ
 
     steps:
     - uses: actions/checkout@v3
