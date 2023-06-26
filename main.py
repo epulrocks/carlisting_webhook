@@ -45,12 +45,15 @@ for make,model in makeModelList:
     driver.get(f"https://mytukar.com/my/en/buy/{make}/{model}")
     time.sleep(10)
 
-    locPopup = driver.find_element(by=By.XPATH, value="//h2[contains(text(),'Select Location')]")
-    if locPopup:
-        driver.find_element(by=By.XPATH, value="//div[7]//button[contains(@class,'AwesomeButton')]/div").click
-        time.sleep(10)
-        driver.find_element(by=By.XPATH, value="//button[contains(@class,'AwesomeButton')]/span").click
-        time.sleep(10)
+    try:
+        locPopup = driver.find_element(by=By.XPATH, value="//h2[contains(text(),'Select Location')]")
+        if locPopup:
+            driver.find_element(by=By.XPATH, value="//div[7]//button[contains(@class,'AwesomeButton')]/div").click
+            time.sleep(10)
+            driver.find_element(by=By.XPATH, value="//button[contains(@class,'AwesomeButton')]/span").click
+            time.sleep(10)
+    except:
+        pass
 
     for i in range(3):
         action = ActionChains(driver)
